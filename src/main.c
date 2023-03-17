@@ -87,6 +87,7 @@ int main(){
 
     modificar_elemento(&lista, 1, 25);
     retirar_elemento (&lista,2);
+    
     printf("Elemento na posição 1: %d\n", posicao_elemento(lista, 1));
     printf("Tamanho da lista: %d\n", tamanho(lista));
   }
