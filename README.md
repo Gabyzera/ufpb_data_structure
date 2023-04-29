@@ -1,26 +1,14 @@
-## **Lista Sequencial e Encadeada em C**
+# 🖥️ Projetos de Estrutura de Dados
+Este repositório contém os projetos desenvolvidos na disciplina de Estrutura de Dados da Universidade Federal da Paraíba (UFPB). Além dos projetos da disciplina, também são apresentadas implementações de estruturas de dados clássicas, como Pilha, Lista Encadeada e Lista Sequencial.
 
-- Este projeto implementa uma lista sequencial e encadeada em linguagem C. O programa oferece funções básicas para manipulação da lista, como criação, verificação de vazio, verificação de cheio, tamanho, posição de um elemento, modificação de elemento, inserção de elemento e retirada de elemento.
+## 🏫 Estrutura do Repositório
+O repositório está organizado em pastas, uma para cada projeto ou implementação de estrutura de dados. Cada pasta contém um arquivo README explicando a estrutura utilizada e os arquivos-fonte com a implementação da estrutura ou do projeto.
 
-### **Funcionalidades**
+## 🔨 Lista de Estruturas de Dados
+- Lista Sequencial
+- Lista Encadeada
+- Pilha
 
-As funções implementadas são:
+## ⚙️ Como compilar e executar os projetos
 
-- `criar_lista`: Cria uma lista vazia.
-
-- `esta_vazia`: Verifica se a lista está vazia.
-
-- `esta_cheia`: Verifica se a lista está cheia.
-
-- `tamanho`: Retorna o tamanho da lista.
-
-- `posicao_elemento`: Retorna o elemento da lista na posição informada.
-
-- `modificar_elemento`: Modifica o elemento da lista na posição informada para o valor informado.
-
-- `inserir_elemento`: Insere um elemento na lista na posição informada.
-
-- `retirar_elemento`: Retira o elemento da lista na posição informada e retorna seu valor.
-
-### Execução
-Para executar o programa, basta compilar o arquivo e rodar o executável gerado.
+Cada projeto e implementação de estrutura de dados e está separado nas pastas do repositório. É necessário ter um compilador C instalado na máquina, como o GCC, e executar os comandos de compilação e execução no terminal.
