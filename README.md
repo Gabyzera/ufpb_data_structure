@@ -12,4 +12,4 @@ O repositório está organizado em pastas, uma para cada projeto ou implementaç
 
 ## ⚙️ Como compilar e executar os projetos
 
-Cada projeto e implementação de estrutura de dados e está separado nas pastas do repositório. É necessário ter um compilador C instalado na máquina, como o GCC, e executar os comandos de compilação e execução no terminal.
+Cada projeto e implementação de estrutura de dados está separado nas pastas do repositório. É necessário ter um compilador C instalado na máquina, como o GCC, e executar os comandos de compilação e execução no terminal.
