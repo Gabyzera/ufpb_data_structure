@@ -6,7 +6,7 @@ typedef struct{
     int quantidade;
 }lista_sequencial;
 
-void criar_lista (lista_sequencial *lista){
+void criar_lista(lista_sequencial *lista){
     lista->quantidade = 0;
 }
 
@@ -23,7 +23,7 @@ int tamanho(lista_sequencial lista){
 }
 
 int posicao_elemento(lista_sequencial lista, int posicao){
-  if(posicao > 0 && posicao <= lista.quantidade){
+  if (posicao > 0 && posicao <= lista.quantidade){
     return lista.elementos[posicao];
   }else{
     printf("Posicao invalida!\n");
@@ -38,11 +38,11 @@ void modificar_elemento(lista_sequencial *lista, int posicao, int valor){
   }
 }
 
-void inserir_elemento(lista_sequencial *lista, int posicao, int valor) {
-    if (esta_cheia(*lista)) {
+void inserir_elemento(lista_sequencial *lista, int posicao, int valor){
+    if (esta_cheia(*lista)){
         printf("Lista cheia!\n");
     }
-    if (posicao <= 0 || posicao > lista->elementos) {
+    if (posicao <= 0 || posicao < lista->quantidade){
         printf("Posicao invalida!\n");
     }
     for (int i = lista->quantidade; i > posicao; i--) {
@@ -71,7 +71,7 @@ int main(){
     lista_sequencial lista;
     criar_lista(&lista);
 
-    // 1 = sim 2 = não
+    // 1 = sim 0 = não
     printf("Lista esta' vazia? %d\n", esta_vazia(lista));
     printf("Lista esta' cheia? %d\n", esta_cheia(lista));
     printf("O tamanho da lista e' %d\n", tamanho(lista));
