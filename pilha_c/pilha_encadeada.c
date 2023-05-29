@@ -1,58 +1,90 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct no {
-    int valor;
-    struct no *prox;
-};
+typedef struct node{
+    int data;
+    struct node *next;
+}Node;
 
-typedef struct no No;
+typedef struct pilha{
+    Node* head;
+    int size;
+}pilha_encadeada;
 
-struct pilha {
-    No *topo;
-    int tamanho;
-};
-
-typedef struct pilha Pilha;
-
-Pilha *criar_pilha() {
-    Pilha *p = (Pilha *) malloc(sizeof(Pilha));
-    p->topo = NULL;
-    p->tamanho = 0;
-    return p;
+pilha_encadeada* create_stack() {
+    pilha_encadeada* pilha = (pilha_encadeada*) malloc(sizeof(pilha_encadeada));
+    pilha->head = NULL;
+    pilha->size = 0;
 }
 
-int pilha_vazia(Pilha *p) {
-    return (p->topo == NULL);
+int is_empty(pilha_encadeada* pilha) {
+    return (pilha->head == NULL);
 }
 
-int tamanho_pilha(Pilha *p) {
-    return p->tamanho;
+int size(pilha_encadeada* pilha) {
+    return pilha->size;
 }
 
-int topo_pilha(Pilha *p) {
-    if (pilha_vazia(p)) {
+int head_stack(pilha_encadeada* pilha) {
+    if (is_empty(pilha)) {
         printf("Pilha vazia\n");
         return -1;
     }
-    return p->topo->valor;
+    return pilha->head->data;
 }
 
-void push(Pilha *p, int valor) {
-    No *novo_no = (No *) malloc(sizeof(No));
-    novo_no->valor = valor;
-    novo_no->prox = p->topo;
-    p->topo = novo_no;
-    p->tamanho++;
+void push(pilha_encadeada* pilha, int data) {
+    Node *new_node = (Node *) malloc(sizeof(Node));
+    new_node->data = data;
+    new_node->next = pilha->head;
+    pilha->head = new_node;
+    pilha->size++;
 }
 
-void pop(Pilha *p) {
-    if (pilha_vazia(p)) {
-        printf("Pilha vazia\n");
-        return;
+void pull(pilha_encadeada* pilha) {
+    if (is_empty(pilha)) {
+        printf("Pilha vazia!\n");
+    } else {
+        Node *node_removed = pilha->head;
+        pilha->head = pilha->head->next;
+        free(node_removed);
+        pilha->size--;
     }
-    No *no_removido = p->topo;
-    p->topo = p->topo->prox;
-    free(no_removido);
-    p->tamanho--;
+}
+
+void print_pilha_encadeada(pilha_encadeada* pilha) {
+    if (is_empty(pilha)) {
+        printf("Pilha vazia!\n");
+    } else {
+        printf("Elementos da pilha: ");
+        Node* current = pilha->head;
+        while (current != NULL) {
+            printf("%d ", current->data);
+            current = current->next;
+        }
+        printf("\n");
+    }
+}
+
+
+int main(){
+    pilha_encadeada* pilha = create_stack();
+
+    print_pilha_encadeada(pilha);
+    
+    printf("Tamanho da pilha: %d\n", size(pilha));
+
+    push(pilha, 0);
+    push(pilha, 1);
+    push(pilha, 2);
+
+    print_pilha_encadeada(pilha); 
+
+    pull(pilha);
+
+    print_pilha_encadeada(pilha); 
+
+    printf("Tamanho da pilha: %d\n", size(pilha));
+    
+    return 0;
 }
