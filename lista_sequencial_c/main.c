@@ -73,7 +73,7 @@ int main(){
 
     // 1 = sim 0 = não
     printf("Lista esta' vazia? %d\n", esta_vazia(lista));
-    printf("Lista esta' cheia? %d\n", esta_cheia(lista));
+    printf("Lista esta' cheia? %d\n", esta_cheia(lista)); 
     printf("O tamanho da lista e' %d\n", tamanho(lista));
 
     // exemplos para testagem
