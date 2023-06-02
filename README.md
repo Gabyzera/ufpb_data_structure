@@ -9,6 +9,7 @@ O repositório está organizado em pastas, uma para cada projeto ou implementaç
 - Lista Encadeada
 - Pilha
 - Grafo
+- Algoritmo de ordenação
 
 ## ⚙️ Como compilar e executar os projetos
 
