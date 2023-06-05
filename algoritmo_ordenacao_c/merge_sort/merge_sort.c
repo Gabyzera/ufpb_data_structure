@@ -1,8 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-#define ARRAY_TAMANHO 101
 
 void merge(int array[], int esquerda[], int tamanho_esquerda, int direita[], int tamanho_direita){
   int i = 0, j = 0, k = 0;
@@ -51,36 +47,4 @@ void merge_sort(int array[], int num){
   merge_sort(direita, num - mid);
 
   merge(array, esquerda, mid, direita, num - mid);
-}
-
-int main(){
-  int array[ARRAY_TAMANHO];
-  int num = 0;
-
-  FILE *file = fopen("couting.txt", "r");
-  if (file == NULL){
-    printf("Erro ao abrir o arquivo.");
-  }
-
-  int n;
-  while (fscanf(file, "%d", &n) == 1 && num < ARRAY_TAMANHO){
-    array[num] = n;
-    num++;
-  }
-
-  fclose(file);
-
-  clock_t tempo_inicio = clock(); 
-  merge_sort(array, num);
-  clock_t tempo_fim = clock(); 
-  double tempo_execucao = (double)(tempo_fim - tempo_inicio) / CLOCKS_PER_SEC;
-    
-  printf("\nArray ordenado do merge_sort: \n");
-  for (int i = 0; i < num; i++){
-    printf("%d ", array[i]);
-  }
-
-  printf("\nTempo de execução: %.10f segundos.\n", tempo_execucao);
-    
-  return 0;
 }
